@@ -1,10 +1,11 @@
 import React from "react"
+import Layout from "../components/layout"
 
 const cancel = () => {
   return (
-    <div>
+    <Layout>
       <h2>Cancel</h2>
-    </div>
+    </Layout>
   )
 }
 

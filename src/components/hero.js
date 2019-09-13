@@ -1,7 +1,9 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
-import Background from "../images/gym2.jpeg"
+import Background from "../images/gym1.jpg"
+import Logo from "../images/logo.png"
+import { FaUserPlus } from "react-icons/fa"
 
 export default () => {
   const data = useStaticQuery(graphql`
@@ -28,23 +30,50 @@ export default () => {
     <div
       className="flex justify-center text-center text-white"
       style={{
-        backgroundImage: `url(${Background})`,
+        backgroundImage: `linear-gradient(rgba(255, 255, 255, 1) 8%, rgba(255, 255, 255, 0)), url(${Background})`,
         backgroundPosition: "center",
         backgroundSize: "cover",
-        height: "calc(100vh - 70px)",
+        height: "calc(100vh - 138px)",
       }}
     >
       <div
-        className="self-center rounded p-12"
+        className="w-full"
         style={{
-          background: "rgba(61, 46, 60, 0.7)",
-          boxShadow: "2px 2px 15px #333",
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          // border: "1px solid red",
         }}
       >
-        <h2 className="font-bold" style={{ fontSize: "6rem" }}>
-          {data.site.siteMetadata.title}
-        </h2>
-        <p className="text-2xl">{data.site.siteMetadata.description}</p>
+        <div className="flex justify-end px-12 mx-4">
+          <h1 className="font-bold tracking-wide" style={{ fontSize: "6rem" }}>
+            Live. Your. Life.
+          </h1>
+        </div>
+        <div className="flex justify-end px-12 mx-4">
+          <h4
+            className="tracking-wide font-bold capitalize"
+            style={{ fontFamily: "Quicksand" }}
+          >
+            {/* Tagline goes here */}
+            Fitness is not a destination, It is a way of life.
+          </h4>
+        </div>
+        {/* <div className="flex justify-end px-12 mx-4">
+          <Link
+            to="/"
+            className="my-2 flex"
+            style={{
+              backgroundColor: "#3d2e3c",
+              color: "#fff",
+              padding: "0.5rem 0.75rem",
+              borderRadius: "0.25rem",
+            }}
+          >
+            Join Now <FaUserPlus className="self-center ml-2" />
+          </Link>
+        </div> */}
       </div>
     </div>
   )

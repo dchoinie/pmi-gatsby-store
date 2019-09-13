@@ -7,6 +7,7 @@ import {
   FaEnvelope,
   FaUser,
 } from "react-icons/fa"
+import Logo from "../images/logo.png"
 
 export default () => {
   const data = useStaticQuery(graphql`
@@ -24,51 +25,83 @@ export default () => {
   `)
   return (
     <>
-      <div
-        className="flex justify-between px-12 py-1 text-white"
-        style={{ backgroundColor: "#555" }}
-      >
-        <div className="text-sm flex">
-          <p>{data.site.siteMetadata.address}</p>
-          <ul className="flex text-sm">
-            <li className="mx-1">{data.site.siteMetadata.phone}</li>
-            <li className="self-center mx-1">
-              <FaFacebook />
-            </li>
-            <li className="self-center mx-1">
-              <FaTwitter />
-            </li>
-            <li className="self-center mx-1">
-              <FaInstagram />
-            </li>
-            <li className="self-center mx-1">
-              <FaEnvelope />
-            </li>
-          </ul>
+      <div className="flex justify-between px-12 py-2 bg-white">
+        <div>
+          <p>
+            <a
+              href="https://goo.gl/maps/PVm6uTDRdUghgUEn8"
+              target="_blank"
+              rel="noopener"
+              className="text-sm"
+              style={{ fontFamily: "Quicksand", color: "#3d2e3c" }}
+            >
+              {data.site.siteMetadata.address}
+            </a>
+            &nbsp;|{" "}
+            <a
+              href="tel:1-507-362-4227"
+              target="_blank"
+              rel="noopener"
+              className="text-sm"
+              style={{ fontFamily: "Quicksand", color: "#3d2e3c" }}
+            >
+              {data.site.siteMetadata.phone}
+            </a>
+          </p>
         </div>
-        <div className="text-sm flex">
-          <FaUser className="self-center mx-1" />
-          <p>Account</p>
+        <div className="flex">
+          <a href="#" className="self-center">
+            <FaFacebook className="mx-4" style={{ color: "#3d2e3c" }} />
+          </a>
+          <a href="#" className="self-center">
+            <FaTwitter
+              className="mx-4 self-center"
+              style={{ color: "#3d2e3c" }}
+            />
+          </a>
+          <a href="#" className="self-center">
+            <FaInstagram
+              className="mx-4 self-center"
+              style={{ color: "#3d2e3c" }}
+            />
+          </a>
+          <a href="#" className="self-center">
+            <FaEnvelope
+              className="mx-4 self-center"
+              style={{ color: "#3d2e3c" }}
+            />
+          </a>
         </div>
       </div>
       <div
-        className="flex justify-between text-white px-12 py-2"
-        style={{ backgroundColor: "#3d2e3c" }}
+        className="flex justify-between px-12 py-2"
+        style={{ backgroundColor: "#fff", color: "#3d2e3c" }}
       >
-        <h2 className="font-bold tracking-wide">
-          {data.site.siteMetadata.title}
-        </h2>
-        <ul className="flex self-center">
-          <li className="mx-2">
-            <Link to="/">Membership</Link>
+        <Link to="/">
+          <img
+            src={Logo}
+            alt="logo"
+            style={{ maxWidth: "200px" }}
+            className="py-2"
+          />
+        </Link>
+        <ul className="flex self-center text-xl">
+          <li className="mx-4 menuLink">
+            <Link to="/">Why Join?</Link>
           </li>
-          <li className="mx-2">
+          <li className="mx-4 menuLink">
+            <Link to="/membership">Membership</Link>
+          </li>
+          <li className="mx-4 menuLink">
+            <Link to="/">Classes</Link>
+          </li>
+          <li className="mx-4 menuLink">
             <Link to="/">Services</Link>
           </li>
-          <li className="mx-2">
+          <li className="mx-4 menuLink">
             <Link to="/">About</Link>
           </li>
-          <li className="mx-2">
+          <li className="mx-4 menuLink">
             <Link to="/">Contact</Link>
           </li>
         </ul>

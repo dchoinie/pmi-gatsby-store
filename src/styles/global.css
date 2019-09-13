@@ -1,4 +1,11 @@
 @tailwind base;
+
+:root {
+  --main-purple: #3d2e3c;
+  --main-purple-lightened: #70616f;
+  --main-black: #221f1f;
+}
+
 h1,
 h2,
 h3,
@@ -6,13 +13,15 @@ h4,
 h5,
 h6 {
   font-family: "Red Hat Display";
+  color: #3d2e3c;
 }
 
 p,
 a,
 ul,
 li {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Quicksand", sans-serif;
+  color: #3d2e3c;
 }
 
 h1 {
@@ -36,4 +45,22 @@ h5 {
 }
 
 @tailwind components;
+
+.menuLink {
+  border-bottom: 1.5px solid transparent;
+}
+
+.menuLink:hover {
+  border-bottom: 1.5px solid #3d2e3c;
+}
+
 @tailwind utilities;
+
+.button {
+  background-color: var(--main-purple);
+  color: #fff;
+}
+
+.button:hover {
+  background-color: var(--main-purple-lightened);
+}

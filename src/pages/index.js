@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero from "../components/hero"
+import Features from "../components/features"
 
 const IndexPage = () => {
   const stripe = window.Stripe("pk_test_8xiHw0K0PYiSDC2r0LnjdnKu00h00lezGz")
@@ -23,14 +24,15 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <Hero />
-      <div>
+      <Features />
+      {/* <div>
         <article>
           <h3>Single Day Pass</h3>
           <button style={{}} onClick={() => placeOrder("sku_FbzYNZNZbE2Xr0")}>
             Purchase
           </button>
         </article>
-      </div>
+      </div> */}
     </Layout>
   )
 }

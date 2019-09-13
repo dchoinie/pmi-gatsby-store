@@ -1,10 +1,11 @@
 import React from "react"
+import Layout from "../components/layout"
 
 const success = () => {
   return (
-    <div>
+    <Layout>
       <h2>Success!</h2>
-    </div>
+    </Layout>
   )
 }
 
